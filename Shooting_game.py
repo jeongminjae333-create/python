@@ -1,4 +1,4 @@
-#Shooting_game.py
+#Shooting_game.py 배경 그림 넣기
 import pygame
 import sys
 pygame.init()
@@ -20,19 +20,17 @@ h = 640
 pad = pygame.display.set_mode((w,h)) #화면생성
 pygame.display.set_caption("민재의 슈팅게임") #제목 설정
 
-pad.fill((pink))
 
 
+#####배경화면 넣기####
+bg =pygame.image.load("images/background2.jpg")#상대적
+pad.blit(bg,(0,0))
+p = pygame.image.load("images/ironman.png")
+px = w/2 - 45/2
+py = h * 0.9
+pad.blit(p,( px,py))
 
-
-#pygame.draw.line(pad,red,(240,0),(240,h),5)        #선그리기
-#pygame.draw.line(pad,red,(0,210),(480,210),5)    #선그리기
-pygame.draw.circle(pad,blue, (100,100),50,0)      #원그리기
-pygame.draw.circle(pad,blue, (360,100),50,0)      #원그리기
-pygame.draw.rect(pad, black, (70,400,340,200)) #사각형그리기
-pygame.draw.polygon(pad,orange,( (320,300),(160,300),(240,210)))
-pygame.draw.ellipse(pad,yellow,(300,300,100,50),0)
-pygame.draw.ellipse(pad,yellow,(0,300,100,50),0)
+#######################
 pygame.display.update() #화면업데이트
 
 while True:
