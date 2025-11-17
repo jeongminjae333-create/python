@@ -20,15 +20,23 @@ h = 640
 pad = pygame.display.set_mode((w,h)) #화면생성
 pygame.display.set_caption("민재의 슈팅게임") #제목 설정
 
+#-----------이미지 로드 함수 -------
+def img_load(obj):
+    img = pygame.image.load("images/"+str(obj)+".png")
+    img_size = img.get_rect().size#이미지의 가로 세로 길이
+    return img, img_size[0],img_zise[1]
+#------------------------------
 
+bg = img_load('background')[0]
+p = img_load('irinman')
+r = img_load('rock02')
 
-#####배경화면 넣기####
-bg =pygame.image.load("images/background2.jpg")#상대적
 pad.blit(bg,(0,0))
-p = pygame.image.load("images/ironman.png")
-px = w/2 - 45/2
-py = h * 0.9
-pad.blit(p,( px,py))
+
+pad.blit(p,(w/2-20,h-50))
+
+pad.blit(r,(w/2,0))
+
 
 #######################
 pygame.display.update() #화면업데이트
